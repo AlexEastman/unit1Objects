@@ -1,34 +1,36 @@
 import java.awt.Color;
 public class TurltleFun
 {
-    public static void relocate(Turtle turtle)
-        {
-           
-            turtle.penUp();
-            turtle.turnLeft();
-            turtle.forward(350);
-            turtle.turnLeft();
-            turtle.forward(200);
-            turtle.turnLeft();
-            turtle.turnLeft();
-            turtle.penDown();
-        }
     public static void main(String[] args)
     {
         World turtleWorld = new World();
-        Turtle turtle1 = new Turtle(turtleWorld);
-        Turtle turtle2 = new Turtle(turtleWorld);
+        Turtle turtle1 = new Turtle(5,450,turtleWorld); // initialize turtle near bottom left corner
+        Turtle turtle2 = new Turtle(5,450,turtleWorld);
         turtle1.setColor(Color.RED);
         turtle2.setColor(Color.BLUE);
         
-        //relocates turtle to bottom of screen        
-        relocate(turtle1);
-        relocate(turtle2);
+        drawSignature(turtle1, turtle2);
         
-        turtle1.forward(48);
+        
+        
+        
+    }
+    
+    public static void drawSignature(Turtle turtle1, Turtle turtle2)
+    {
+        //Draws my name at bottom of screen
+       
+        //sets standard height for name at 50 pixels
+        turtle1.forward(50);
+        turtle1.turnRight();
+        turtle1.forward(30);
+        turtle1.turnRight();
+        turtle1.forward(50);
+        
+        turtle2.forward(30);
         turtle2.turnRight();
-        turtle2.forward(96);
-        
-        
+        turtle2.forward(30); //finishes the "A" letter
+       
+    
     }
 }
